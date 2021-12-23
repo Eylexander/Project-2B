@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Learning JS trough Kaboom.js" />
+    <meta name="author" content="Eylexander" />
+    <meta name="keywords" content="eylexander,project_2a,kaboomjs" />
+    <meta name="theme-color" content="#1774fd" />
+    <title>Eylexander - Project 2A</title>
+    <link rel="icon" type="image/x-icon" href="index_specs/latest.png" />
+    <link href="index_specs/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top">Project 2A <img src="index_specs/latest.png" width="32" height="32" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#games">Games</a></li>
+                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#sources">Sources</a></li>
+                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="./phpmyadmin">Admin Panel</a></li>
+                    <li class="nav-item px-1"><a id="modebutton" class="btn-dark nav-link" onclick="Mode()">Dark Mode</a></l>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function Mode() {
+            var content = document.getElementById("modebutton");
+            if (content.innerText = "Dark Mode") {
+                content.innerText = "Light Mode";
+            } else if (content.innerText = "Light Mode") {
+                content.innerText = "Dark Mode";
+            } else {
+                return
+            }
+        }
+    </script>
+
+    <header class="bg-primary bg-gradient text-white" id="header">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">Welcome to Eylexander's Project 2A</h1>
+            <p class="lead">A Project leading to learn JavaScript trough Kaboom.js</p>
+            <a class="btn btn-lg btn-light" href="#games">Check current Games!</a>
+        </div>
+    </header>
+
+    <section id="games">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Games</h2>
+                    <p class="lead">Current featured games :</p>
+                    <ul>
+                        <li><a class="nav-link" href="./Basics/index.html">Basics</a></li>
+                        <li><a class="nav-link" href="./Space Invader/index.html">Space Invaders</a></li>
+                        <li><a class="nav-link" href="./Mario/index.html">Mario</a></li>
+                        <li><a class="nav-link" href="./Zelda/index.html">Zelda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sources">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Sources linked to the Project</h2>
+                    <p class="lead">Check the font used on <a class="link" href="https://startbootstrap.com/template/scrolling-nav" target="_blank">Startbootstrap</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Contact me</h2>
+                    <p class="lead">Chat with me on <a class="link" href="https://discord.com/users/344526513577918477" target="_blank">Discord</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark">
+        <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Eylexander MIT 2021</p></div>
+    </footer>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="index_specs/bootstrap.bundle.min.js"></script>
+    <script src="index_specs/scripts.js"></script>
+</body>
+
+</html>

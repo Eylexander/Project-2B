@@ -22,9 +22,11 @@
 .example::-webkit-scrollbar {
   display: none;
 }
+
 link {
   display: none;
 }
+
 #header {
   background-color: rgba(23, 116, 253, 1)
 }
@@ -37,6 +39,10 @@ link {
 #contact {
   background-color: rgba(23,116,253, 0.25)
 }
+#experiments {
+  background-color: rgba(23,116,253, 0.2);
+}
+
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }

@@ -1,3 +1,9 @@
+/*!
+* Start Bootstrap - Scrolling Nav v5.0.4 (https://startbootstrap.com/template/scrolling-nav)
+* Copyright 2013-2021 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-scrolling-nav/blob/master/LICENSE)
+*/
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
@@ -21,5 +27,29 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
+
+// Own JS Code
+function Mode() {
+    var content = document.getElementById("modebutton");
+    if (content.innerText = "Dark Mode") {
+        content.innerText = "Light Mode";
+    } else if (content.innerText = "Light Mode") {
+        content.innerText = "Dark Mode";
+    } else {
+        return
+    }
+}
+
+window.onclick = function() {
+    function Mode() {
+        var content = document.getElementById("modebutton");
+        if (content.innerText = "Dark Mode") {
+            content.innerText = "Light Mode";
+        } else if (content.innerText = "Light Mode") {
+            content.innerText = "Dark Mode";
+        } else {
+            return
+        }
+    }
+}

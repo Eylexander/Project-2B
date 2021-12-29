@@ -30,26 +30,12 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 // Own JS Code
-function Mode() {
-    var content = document.getElementById("modebutton");
-    if (content.innerText = "Dark Mode") {
-        content.innerText = "Light Mode";
-    } else if (content.innerText = "Light Mode") {
-        content.innerText = "Dark Mode";
+var button = document.getElementById("modebutton");
+button.addEventListener('click', function() {
+    if (button.getAttribute("data-text-swap") == button.innerText) {
+        button.innerText = button.getAttribute("data-text-original");
     } else {
-        return
+        button.setAttribute("data-text-original", button.innerText);
+        button.innerText = button.getAttribute("data-text-swap");
     }
-}
-
-window.onclick = function() {
-    function Mode() {
-        var content = document.getElementById("modebutton");
-        if (content.innerText = "Dark Mode") {
-            content.innerText = "Light Mode";
-        } else if (content.innerText = "Light Mode") {
-            content.innerText = "Dark Mode";
-        } else {
-            return
-        }
-    }
-}
+}, false);

@@ -7,28 +7,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Learning JS trough Kaboom.js" />
+    <meta name="description" content="Learning JS through libraries" />
     <meta name="author" content="Eylexander" />
     <meta name="keywords" content="eylexander,project_2b,kaboomjs" />
     <meta name="theme-color" content="#1774fd" />
     <title>Eylexander - Project 2B</title>
-    <link rel="icon" type="image/x-icon" href="specs/latest.png" />
+    <link rel="icon" type="image/x-icon" href="specs/bot.png" />
     <link href="specs/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container px-4">
-            <a class="navbar-brand" href="#page-top"><img src="specs/latest.png" width="32" height="32" /> Project 2B</a>
+            <a class="navbar-brand" href="#page-top"><img src="specs/bot.png" width="32" height="32" /> Project 2B</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#projects">Projects</a></li>
-                    <!-- <li class="nav-item px-1"><a class="btn-dark nav-link" href="#sources">Sources</a></li>
-                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="#experiments">Experiments</a></li> -->
-                    <li class="nav-item px-1"><a class="btn-dark nav-link" href="./phpmyadmin">Admin Panel</a></li>
-                    <li class="nav-item px-1"><a id="modebutton" class="btn-dark nav-link" onclick="Mode()">Dark Mode</a></l>
+                    <li class="nav-item px-1"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item px-1"><a class="nav-link" href="#sources">Sources</a></li>
+                    <li class="nav-item px-1"><a class="nav-link" href="./phpmyadmin">Admin Panel</a></li>
+                    <li class="nav-item px-1"><a class="nav-link" id="modebutton" data-text-swap="Light Mode" data-text-original="Dark Mode">Dark Mode</a></l>
                 </ul>
             </div>
         </div>
@@ -47,41 +45,42 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <div class="card-body">
-                            <a href="docs/1b.html" target="=_blank"><img class="card-img-top" src="specs/latest.png" alt="Project emblem" /></a>
+                        <div class="card-body h-100">
+                            <a href="docs/1b.html" target="=_blank"><img class="card-img-top" src="specs/bot.png" alt="Project emblem" /></a>
                         </div>
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="fw-bolder" id="Project-1B">Project 1B</h5>
                                 <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.body.querySelector("#ahah");
+                                    var content = document.body.querySelector("#ah");
                                     $(document).get("https://api.github.com/repos/Eylexander/Project-1B", function(result) {
-                                        content.innerText = result.description;
+                                        content.value = result.description;
                                     });
                                 </script>
-                                <p id="ahah"></p>
+                                <p id="ah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B#readme" target="_blank">View README.md</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B#readme" target="_blank">View README</a></div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B" target="_blank">View on GitHub</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/1b.html" target="_blank">View Project</a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <div class="card-body">
-                            <a href="docs/1b.html" target="=_blank"><img class="card-img-top" src="specs/latest.png" alt="Project emblem" /></a>
+                        <div class="card-body h-100">
+                            <div class="h-10"></div>
+                            <a href="docs/2a.html" target="=_blank"><img class="card-img-top" src="specs/kaboom.png" alt="Project emblem" /></a>
                         </div>
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <h5 class="fw-bolder" id="Project-1B">Project 1B</h5>
+                                <h5 class="fw-bolder" id="Project-2A">Project 2A</h5>
                                 <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
                                     var content = document.getElementById("ahah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-1B", function(result) {
+                                    $(document).get("https://api.github.com/repos/Eylexander/Project-2A", function(result) {
                                         content.innerText = result.description;
                                     });
                                 </script>
@@ -89,52 +88,66 @@
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B#readme" target="_blank">View README.md</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-2A#readme" target="_blank">View README</a></div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B" target="_blank">View on GitHub</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/2a.html" target="_blank">View Project</a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <div class="card-body">
-                            <a href="docs/1b.html" target="=_blank"><img class="card-img-top" src="specs/latest.png" alt="Project emblem" /></a>
+                        <div class="card-body h-100">
+                            <div class="h-10"></div>
+                            <a href="docs/2c.html" target="=_blank"><img class="card-img-top" src="specs/spleech.jpg" alt="Project emblem" /></a>
                         </div>
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <h5 class="fw-bolder" id="Project-1B">Project 1B</h5>
+                                <h5 class="fw-bolder" id="Project-2C">Project 2C</h5>
                                 <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.getElementById("ahah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-1B", function(result) {
+                                    var content = document.getElementById("ahahah");
+                                    $(document).get("https://api.github.com/repos/Eylexander/Project-2C", function(result) {
                                         content.innerText = result.description;
                                     });
                                 </script>
-                                <p id="ahah"></p>
+                                <p id="ahahah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B#readme" target="_blank">View README.md</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-2C#readme" target="_blank">View README</a></div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1B" target="_blank">View on GitHub</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/2c.html"_blank">View Project</a></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- <section id="experiments">
-        <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                    <h2>Experiments</h2>
-                    <p class="lead">Current experiences:</p>
-                    <ul>
-                        <li><a class="nav-link" href="./p5/index.html">p5.js</a></li>
-                    </ul>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="card-body h-100">
+                            <div class="h-30"></div>
+                            <a href="docs/3a.html" target="=_blank"><img class="card-img-top" src="specs/p5js.svg" alt="Project emblem" /></a>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder" id="Project-3A">Project 3A</h5>
+                                <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
+                                    var content = document.getElementById("ahahahah");
+                                    $(document).get("https://api.github.com/repos/Eylexander/Project-3A", function(result) {
+                                        content.innerText = result.description;
+                                    });
+                                </script>
+                                <p id="ahahahah"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-3A#readme" target="_blank">View README</a></div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/3a.html"_blank">View Project</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,27 +158,18 @@
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
                     <h2>Sources linked to the Project</h2>
-                    <p class="lead">Check the font used on <a class="link" href="https://startbootstrap.com/template/scrolling-nav" target="_blank">Startbootstrap</a>.</p>
+                    <div class="col mb-5"></div>
+                    <p class="lead">Check the font used on <a class="link" href="https://startbootstrap.com" target="_blank">Startbootstrap</a>.</p>
+                    <p class="lead">Check the library used on <a class="link" href="https://discord.js.org" target="_blank">Discordjs</a>.</p>
                     <p class="lead">Check the library used on <a class="link" href="https://kaboomjs.com" target="_blank">Kaboomjs</a>.</p>
-                    <p class="lead">Check the library used on <a class="link" href="https://p5js.org/" target="_blank">p5.js</a>.</p>
+                    <p class="lead">Check the library used on <a class="link" href="https://p5js.org" target="_blank">p5.js</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                    <h2>Contact me</h2>
-                    <p class="lead">Chat with me on <a class="link" href="https://discord.com/users/344526513577918477" target="_blank">Discord</a>.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <footer class="py-5 bg-dark">
-        <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Eylexander MIT 2021</p></div>
+        <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; <a class="copyright" href="https://github.com/Eylexander" target="_blank" style="color: #ffffff">Eylexander</a> MIT 2021</p></div>
     </footer>
 </body>
 

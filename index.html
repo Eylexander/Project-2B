@@ -2,6 +2,7 @@
 <html lang="en">
 
     <script src="specs/bootstrap.bundle.min.js"></script>
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="specs/scripts.js"></script>
 
 <head>
@@ -26,7 +27,7 @@
                     <li class="nav-item px-1"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item px-1"><a class="nav-link" href="#sources">Sources</a></li>
                     <li class="nav-item px-1"><a class="nav-link" href="./phpmyadmin">Admin Panel</a></li>
-                    <li class="nav-item px-1"><a class="nav-link" id="modebutton" data-text-swap="Light Mode" data-text-original="Dark Mode">Dark Mode</a></l>
+                    <li class="nav-item px-1"><a class="nav-link" id="modebutton" data-text-swap="Light Mode" data-text-original="Dark Mode" href="#">Dark Mode</a></l>
                 </ul>
             </div>
         </div>
@@ -51,13 +52,13 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="fw-bolder" id="Project-1B">Project 1B</h5>
-                                <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.body.querySelector("#ah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-1B", function(result) {
-                                        content.value = result.description;
+                                <p id="ah"></p>
+                                <script>
+                                    var content1 = $("#ah");
+                                    $.get("https://api.github.com/repos/Eylexander/Project-1B", function(result1) {
+                                        content1.append(JSON.stringify(result1.description));
                                     });
                                 </script>
-                                <p id="ah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -78,13 +79,13 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="fw-bolder" id="Project-2A">Project 2A</h5>
-                                <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.getElementById("ahah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-2A", function(result) {
-                                        content.innerText = result.description;
+                                <p id="ahah"></p>
+                                <script type="text/JavaScript">
+                                    var content2 = $("#ahah");
+                                    $.get("https://api.github.com/repos/Eylexander/Project-2A", function(result2) {
+                                        content2.append(JSON.stringify(result2.description));
                                     });
                                 </script>
-                                <p id="ahah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -105,13 +106,13 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="fw-bolder" id="Project-2C">Project 2C</h5>
-                                <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.getElementById("ahahah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-2C", function(result) {
-                                        content.innerText = result.description;
+                                <p id="ahahah"></p>
+                                <script type="text/JavaScript">
+                                    var content3 = $("#ahahah");
+                                    $.get("https://api.github.com/repos/Eylexander/Project-2C", function(result3) {
+                                        content3.append(JSON.stringify(result3.description));
                                     });
                                 </script>
-                                <p id="ahahah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -132,13 +133,13 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="fw-bolder" id="Project-3A">Project 3A</h5>
-                                <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js">
-                                    var content = document.getElementById("ahahahah");
-                                    $(document).get("https://api.github.com/repos/Eylexander/Project-3A", function(result) {
-                                        content.innerText = result.description;
+                                <p id="ahahahah"></p>
+                                <script type="text/JavaScript">
+                                    var content4 = $("#ahahahah");
+                                    $.get("https://api.github.com/repos/Eylexander/Project-3A", function(result4) {
+                                        content4.append(JSON.stringify(result4.description));
                                     });
                                 </script>
-                                <p id="ahahahah"></p>
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

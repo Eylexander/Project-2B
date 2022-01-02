@@ -1,4 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
+<body>
+    <p id="ah"></p>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var content = $("#ah");
+        $.get("https://api.github.com/repos/Eylexander/Project-2A", function(result) {
+            content.append(JSON.stringify(result.description));
+        });
+    </script>
+
+</body>
+
 </html>

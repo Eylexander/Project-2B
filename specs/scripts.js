@@ -39,3 +39,11 @@ button.addEventListener('click', function() {
         button.innerText = button.getAttribute("data-text-swap");
     }
 }, false);
+
+// JQuery Scripts
+// import "http://code.jquery.com/jquery-latest.min.js"
+// var content1 = document.getElementById("ah");
+// $.get("https://api.github.com/repos/Eylexander/Project-1B", function(result1) {
+//     var desc1 = JSON.stringify(result1.description);
+//     content1.append(desc1.replace('"','').replace('"',''));
+// });

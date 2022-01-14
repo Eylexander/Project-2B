@@ -13,15 +13,14 @@
 
 
 /* Own CSS code */
-.example {
+.scrollbarnone {
   overflow-y: scroll;
   overflow-x: hidden;
-  border: 10px rgba(255, 115, 0, 1);
+  /* border: 10px rgba(255, 115, 0, 1); */
   scrollbar-width: none;
   -ms-overflow-style: none;
-  background-color: rgb(255, 127, 0);
 }
-.example::-webkit-scrollbar {
+.scrollbarnone::-webkit-scrollbar {
   display: none;
 }
 
@@ -48,6 +47,13 @@ a:link, a:visited, a:hover, a:active {
 }
 .h-30 {
   height: 30% !important;
+}
+
+.canva {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

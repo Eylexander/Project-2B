@@ -14,7 +14,22 @@
 </head>
 
 <body>
+    <p id='ad'></p>
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+    window.onload = function () {
+        var dataPoints = [];
+        var content = $("ad");
+        $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=7&type=json", function(data) {  
+            $.each(data, function(key, value){
+                dataPoints.push({x: value[0], y: parseInt(value[1])});
+                content.append(JSON.stringify(data.prices))
+            }); 
+        });
+    }
+    </script>
 
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </body>
 
 <footer class="py-5 bg-dark">

@@ -1,25 +1,28 @@
-const k = kaboom({
+kaboom({
     // width: 420,
     // height: 340,
     scale: 1,
-    startScene: "main",
+    // startScene: "main",
     debug: true,
     fullscreen: false,
     background: [ 255, 127, 0],
 });
 
-if (!k.isFocused()) {
-    k.focus()
-}
+loadSprite("bot", "http://eylexanders.ddns.net/Project-2A/Basics/sprites/bookshelf.png")
+loadSprite("ground", "/sprites/jukebox_side.png")
+loadSprite("enemy", "/sprites/tnt_side.png")
 
-k.loadSprite('bot', 'sprites/bookshelf.png');
-k.loadSprite('ground', './sprites/jukebox_side.png');
-k.loadSprite('enemy', './sprites/tnt_side.png');
 var SPEED = 200;
+gravity(2400)
 var pv = 100;
 
+if (!isFocused()) {
+    focus()
+}
+
+
 // define a level
-k.addLevel([
+const level = addLevel([
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "x                                         x",
     "x                                         x",
@@ -42,6 +45,7 @@ k.addLevel([
     ], {
         width: 32,
         height: 32,
+        pos: vec2(100, 200),
         "x": () => [
             k.sprite("ground"),
             k.solid(),
@@ -63,15 +67,15 @@ k.addLevel([
         ]
     });
 
-const char = k.add([
-    k.sprite('bot'),
-    k.pos(10, 10),
-    k.scale(2),
-    k.area(),
-    k.body(),
+const char = add([
+    sprite('bot'),
+    pos(10, 10),
+    scale(2),
+    area(),
+    body(),
 ]);
 
-const score = k.add([
+const score = add([
     text(pv),
     pos(12, 12),
     fixed(),
@@ -86,12 +90,14 @@ k.onKeyDown('q' , () => {
 })
 
 k.onKeyDown('z' , () => {
-    char.jump()
+    if (char.isGrounded()) {
+		char.jump()
+	}
 })
 
-char.collides('danger', () => {
+char.onCollide('danger', () => {
     pv = pv-50;
     if (pv <= 0) {
-        k.destroy(char)
+        destroy(char)
     }
 });

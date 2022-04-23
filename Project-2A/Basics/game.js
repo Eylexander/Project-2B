@@ -8,9 +8,9 @@ kaboom({
     background: [ 255, 127, 0],
 });
 
-loadSprite("bot", "http://eylexanders.ddns.net/Project-2A/Basics/sprites/bookshelf.png")
-loadSprite("ground", "/sprites/jukebox_side.png")
-loadSprite("enemy", "/sprites/tnt_side.png")
+loadSprite("bot", "/sprites/jukeboc_side.png")
+loadSprite("ground", "sprites/jukebox_side.png")
+loadSprite("enemy", "sprites/tnt_side.png")
 
 var SPEED = 200;
 gravity(2400)

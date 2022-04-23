@@ -27,6 +27,7 @@
                     <li class="nav-item px-1"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item px-1"><a class="nav-link" href="#sources">Sources</a></li>
                     <li class="nav-item px-1"><a class="nav-link" href="./phpmyadmin">Admin Panel</a></li>
+                    <li class="nav-item px-1"><a class="nav-link" href="./Project-1D" target="_blank">Memes Collection</a></li>
                     <li class="nav-item px-1"><a class="nav-link" id="modebutton" data-text-swap="Light Mode" data-text-original="Dark Mode" href="#">Dark Mode</a></l>
                 </ul>
             </div>
@@ -67,6 +68,33 @@
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/1b.html" target="_blank">View Project</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="card-body h-100">
+                            <a href="docs/1d.html" target="=_blank"><img class="card-img-top" src="specs/1d.png" alt="Project emblem" /></a>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder" id="Project-1D">Project 1D</h5>
+                                <p id="aha"></p>
+                                <script>
+                                    var content12 = $("#aha");
+                                    $.get("https://api.github.com/repos/Eylexander/Project-1D", function(result12) {
+                                        var desc12 = JSON.stringify(result12.description);
+                                        content12.append(desc12.replace('"','').replace('"',''));
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://github.com/Eylexander/Project-1D#readme" target="_blank">View README</a></div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="docs/1d.html" target="_blank">View Project</a></div>
                         </div>
                     </div>
                 </div>

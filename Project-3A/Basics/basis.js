@@ -22,7 +22,7 @@ function setup() {
 	gVMrgn = (windowHeight - gRows * gTSd) / 2;
 	//	print("WHGHT", windowHeight, "RWS", gRows, "GVMRGN", gVMrgn);
 	cv = createCanvas(windowWidth, windowHeight);
-  cv.parent('sketch-holder');
+    cv.parent('sketch-holder');
 	cv.background(gBgColor);
 	//	print("WDTH", width, gCols * gTSd, "HGHT", height, gRows * gTSd);
 	// cv.position(gHMrgn, gVMrgn);

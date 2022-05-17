@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Basic Tutorial" />
     <meta name="author" content="Eylexander" />
     <meta name="keywords" content="eylexander,project_2a,kaboomjs,basics" />
@@ -11,11 +11,18 @@
     <title>Eylexander - Basics</title>
     <link rel="icon" type="image/x-icon" href="../../docs/specs/k.png" />
     <link rel="stylesheet" href="../../specs/styles.css" />
+
+    <style>
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
 
 <body class="scrollbarnone">
-    <script src="https://kaboomjs.com/dist/kaboom.js"></script>
-    <script src="game.js"></script>
+    <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
+    <script src="game.js" type="module"></script>
+    <!-- <canvas id="sketch-holder"></canvas> -->
 </body>
 
 <footer class="py-5 bg-dark">

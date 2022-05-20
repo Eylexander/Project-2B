@@ -20,17 +20,31 @@ loadSprite("enemy", "sprites/tnt_side.png");
 
 
 scene("menu", () => {
-    addButton("Start", vec2(700, 250), () => go("main"))
-    addButton("Lose", vec2(700, 350), () => go("lose"))
+    addButton("Start", vec2(700, 250), () => main())
+    addButton("Lose", vec2(700, 350), () => lose())
     onUpdate(() => cursor("default"))
 })
 
 scene("lose", () => {
-    add([
-		text("You Lose"),
-		pos(12),
+    const fail = add([
+		text("You lose!"),
+		pos(700, 300),
+		area({ cursor: "pointer", }),
+		scale(1),
+		origin("center"),
 	])
-	onKeyPress(menu)
+    fail.onUpdate(() => {
+		const t = time() * 10
+		fail.color = rgb(
+			wave(0, 255, t),
+			wave(0, 255, t + 2),
+			wave(0, 255, t + 4),
+		)
+		fail.scale = vec2(1.2)
+	})
+	wait(2, () => {
+        menu()
+    })
 })
 
 scene("main", () => {
@@ -89,7 +103,12 @@ scene("main", () => {
     onKeyDown('q' , () => {
         char.move(-SPEED, 0)
     })
-    onKeyDown('z' || 'space' , () => {
+    onKeyDown('z' , () => {
+        if (char.isGrounded()) {
+            char.jump()
+        }
+    })
+    onKeyDown('space' , () => {
         if (char.isGrounded()) {
             char.jump()
         }
@@ -147,4 +166,8 @@ function addButton(txt, p, f) {
 	})
 }
 
-go("menu")
+function menu() { go("menu") }
+function lose() { go("lose") }
+function main() { go("main") }
+
+menu()

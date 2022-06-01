@@ -1,34 +1,61 @@
 // Original Game from Eylexander
 
 // Params
-kaboom({
+let backx = 255;
+let backy = 127;
+let backz = 80;
+
+const k = kaboom({
     // width: 40*32,
     // height: 20*32,
     scale: 1,
-    // startScene: "main",
+    startScene: "menu",
     debug: true,
     fullscreen: true,
     // stretch: true,
     // letterbox: true,
-    background: [ 255, 127, 0],
-    // canvas: "sketch-holder",
+    background: [ backx, backy, backz],
+    // canvas: document.querySelector("#sketch"),
 });
-if (!isFocused()) { canvas.focus() }
+if (!k.isFocused()) { canvas.focus() }
 loadSprite("bot", "sprites/bookshelf.png");
 loadSprite("ground", "sprites/jukebox_side.png");
 loadSprite("enemy", "sprites/tnt_side.png");
 
 
-scene("menu", () => {
-    addButton("Start", vec2(700, 250), () => main())
-    addButton("Lose", vec2(700, 350), () => lose())
+k.scene("menu", () => {
+    addButton("Start", vec2(window.innerWidth/2, window.innerHeight/2.5), () => main())
+    addButton("Settings", vec2(window.innerWidth/2, window.innerHeight/1.9), () => params())
+    addButton("Exit", vec2(window.innerWidth/2, window.innerHeight/1.5), () => exit())
     onUpdate(() => cursor("default"))
 })
 
-scene("lose", () => {
+k.scene("params", () => {
+    addButton("B", vec2(window.innerWidth/3, window.innerHeight/2), () => blue())
+    addButton("G", vec2(window.innerWidth/2, window.innerHeight/2), () => green())
+    addButton("O", vec2(window.innerWidth/1.5, window.innerHeight/2), () => orange())
+    addButton("Play!", vec2(window.innerWidth/2, window.innerHeight/1.5), () => menu())
+    onUpdate(() => cursor("default"))
+
+    const t = time() * 10
+    onKeyDown("space", () => {
+        backx = rgb(
+			wave(0, 255, t)
+		);
+        backy = rgb(
+			wave(0, 255, t + 2)
+		);
+        backz = rgb(
+			wave(0, 255, t + 4)
+		);
+    })
+
+})
+
+k.scene("exit", () => {
     const fail = add([
 		text("You lose!"),
-		pos(700, 300),
+		pos(window.innerWidth/2, window.innerHeight/2),
 		area({ cursor: "pointer", }),
 		scale(1),
 		origin("center"),
@@ -42,14 +69,19 @@ scene("lose", () => {
 		)
 		fail.scale = vec2(1.2)
 	})
-	wait(2, () => {
+
+    fail.onClick(() => menu())
+    onKeyDown('space', () => {
         menu()
     })
+    wait(2, () => {
+        menu()
+    })	
 })
 
-scene("main", () => {
+k.scene("main", () => {
 
-    gravity(2000);
+    gravity(1000);
     var SPEED = 200;
     var px = 4;
     let pv = 100;
@@ -80,22 +112,17 @@ scene("main", () => {
             area(),
             scale(px)
         ],
-        "@": () => [
-            sprite("enemy"),
-            area(),
-            scale(px),
-            "danger",
-        ],
         "a": () => [
             sprite("enemy"),
             scale(px),
             area(),
-            body(),
+            body({ jumpForce: 500}),
             "danger"
         ]
     })
 
     const char = get("char")[0]
+    const enemy = get("danger")[0]
 
     onKeyDown('d' , () => {
         char.move(SPEED, 0)
@@ -129,14 +156,20 @@ scene("main", () => {
     
     char.on("death", () => {
         destroy(char)
-        go("lose")
+        go("exit")
     })
 
     char.onUpdate(() => {
 		if (char.pos.y >= 480) {
-			go("lose")
+			go("exit")
 		}
 	})
+
+    loop(2, () => {
+        if (enemy.isGrounded()) {
+            enemy.jump()
+        }
+    })
 })
 
 function addButton(txt, p, f) {
@@ -166,8 +199,31 @@ function addButton(txt, p, f) {
 	})
 }
 
-function menu() { go("menu") }
-function lose() { go("lose") }
-function main() { go("main") }
+function menu() { k.go("menu") }
+function params() { k.go("params") }
+function exit() { window.location.assign("../../docs/2a.html") }
+function main() { k.go("main") }
+function blue() {
+    // k({background: [
+    //     backx = 30,
+    //     backy = 144,
+    //     backz = 255,
+    // ]})
+    k.background = [30,144,255]
+}
+function green() {
+    k({background: [
+        backx = 50,
+        backy = 205,
+        backz = 50,
+    ]})
+}
+function orange() {
+    k({background: [
+        backx = 255,
+        backy = 127,
+        backz = 80,
+    ]})
+}
 
 menu()
